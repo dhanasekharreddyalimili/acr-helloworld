@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aks-04ba"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aks-04ba"
+  template:
+    metadata:
+      labels:
+        app: "aks-04ba"
+    spec:
+      containers:
+        - name: "aks-04ba"
+          image: "myazcr2022.azurecr.io/aks"
+          ports:
+          - containerPort: 80
