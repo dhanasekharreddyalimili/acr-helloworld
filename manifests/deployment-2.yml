@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "myaks-f88b"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "myaks-f88b"
+  template:
+    metadata:
+      labels:
+        app: "myaks-f88b"
+    spec:
+      containers:
+        - name: "myaks-f88b"
+          image: "myacrs2022.azurecr.io/myaks"
+          ports:
+          - containerPort: 80
